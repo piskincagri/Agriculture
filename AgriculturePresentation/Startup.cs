@@ -1,3 +1,8 @@
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Abstrac;
+using DataAccessLayer.Concrete.EntitiyFramework;
+using DataAccessLayer.Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +28,13 @@ namespace AgriculturePresentation
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IServiceService, ServiceManager>();
+            services.AddScoped<IServiceDal, EfServiceDal>();
+            services.AddScoped<ITeamService, TeamManager>();
+            services.AddScoped<ITeamDal, EfTeamDal>();
+
+
+            services.AddDbContext<AgricultureContext>();
             services.AddControllersWithViews();
         }
 
