@@ -9,5 +9,11 @@ namespace DataAccessLayer.Abstrac
 {
   public  interface IAnnouncementDal: IGenericDal<Announcement>
     {
+
+        void AnnouncementStatusToTrue(int id);
+
+        void AnnouncementStatusToFalse(int id);
+
+
     }
 }

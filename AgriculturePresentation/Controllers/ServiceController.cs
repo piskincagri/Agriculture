@@ -11,6 +11,8 @@ namespace AgriculturePresentation.Controllers
 {
     public class ServiceController : Controller
     {
+
+
         private readonly IServiceService _serviceService;
 
         public ServiceController(IServiceService serviceService)
