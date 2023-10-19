@@ -4,38 +4,22 @@ using DataAccessLayer.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(AgricultureContext))]
-    partial class AgricultureContextModelSnapshot : ModelSnapshot
+    [Migration("20231019083119_mig_add_socialmedia_entity")]
+    partial class mig_add_socialmedia_entity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("EntityLayer.Concrete.About", b =>
-                {
-                    b.Property<int>("AboutID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AboutHistory")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AboutUs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("AboutID");
-
-                    b.ToTable("Abouts");
-                });
 
             modelBuilder.Entity("EntityLayer.Concrete.Address", b =>
                 {
