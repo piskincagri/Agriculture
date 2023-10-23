@@ -29,5 +29,7 @@ namespace DataAccessLayer.Contexts
 
         public DbSet<About> Abouts { get; set; }
 
+        public DbSet<Admin> Admins { get; set; }
+
     }
 }
