@@ -1,4 +1,4 @@
-﻿
+﻿@model AgriculturePresentation.Models.LoginViewModel
 @{
     Layout = null;
 }
@@ -31,12 +31,12 @@
                 <div class="form-section">
                     <h3>Login</h3>
                   
-                    <form action="#" method="post" class="signin-form">
+                    <form  method="post" class="signin-form">
                         <div class="form-input">
-                            <input type="text" name="Username" placeholder="Kullanıcı Adı" required="" autofocus>
+                            <input type="text" asp-for="username" placeholder="Kullanıcı Adı" required="" autofocus>
                         </div>
                         <div class="form-input">
-                            <input type="password" name="password" placeholder="Şifre" required="">
+                            <input type="password" asp-for="password" placeholder="Şifre" required="">
                         </div>
                         <label class="check-remaind">
                             <input type="checkbox">
